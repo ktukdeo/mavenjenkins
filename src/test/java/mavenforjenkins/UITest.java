@@ -11,9 +11,10 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class UITest 
 {
-
+/**
 	@Parameters("Browser")
 	@Test
+	**/
 	public void startBrowser(String browserName)
 	{
 		System.out.println("Parameter value is "+browserName);
@@ -35,5 +36,9 @@ public class UITest
 		driver.quit();
 	}
 	
-	
+	@Parameters("Browser")
+	@Test
+	public void anotherTest(String browserName) {
+		Assert.assertTrue(browserName.contains("Chrome"),"Not a chrome browser Beware!!");
+	}
 }
